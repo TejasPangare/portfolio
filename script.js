@@ -8,8 +8,7 @@ window.addEventListener("mousemove",function (dets) {
 var hampage=document.querySelector(".ham-page")
         function myFunction(x) {
             x.classList.toggle("change");
-            hampage.classList.toggle("change-ham");
-          
+            hampage.classList.toggle("change-ham");          
         }
 
 //for dark mode

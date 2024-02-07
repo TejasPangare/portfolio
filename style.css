@@ -51,6 +51,7 @@ html,body{
     width: 100%;
     /* background-color: rgb(41, 44, 85); */
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
     justify-content: space-between;
     padding: 0;
@@ -99,8 +100,9 @@ html,body{
 }
 .mode{
     float: right;
-    height: 4vh;
-    width: 10vw;
+    height: 24px;
+    width: fit-content;
+    padding: 2px 15px;
     color: var(--pitchblack);
     background-color: var(--pitchwhite);
     border: none;
@@ -112,6 +114,7 @@ html,body{
 .info-section{
     width: 100%;
     display: flex;
+    flex-wrap:wrap-reverse;
     height: auto;
     justify-content: space-evenly;
 }
@@ -120,8 +123,8 @@ html,body{
 .myinfo{
     z-index: 1;
     position: relative;
-    margin-top: 15vh;
-    margin-left: 15vh;
+    margin-top: 15%;
+    margin-left: 15%;
     padding: 3vh;
     height: auto;
     width: 80%;
@@ -132,7 +135,7 @@ html,body{
     cursor: default;
 }
 .myinfo h1{
-    margin: 5vh 0;
+    margin: 5% 0;
     color: var(--pitchwhite);
 
 }
@@ -168,8 +171,8 @@ html,body{
     text-align: center;
 }
 .resume{
-    margin-left: 7vw;
-    margin-top: 2vw;
+    margin-left: 15%;
+    margin-top: 2%;
     padding: 5px 15px;
     background-color: var(--white);
     border: none;
@@ -182,8 +185,9 @@ html,body{
 }
 
 .m-right{
-    width: 40%;
+    width: 38%;
     background-color: #9e9b9b;
+    /* opacity: .4; */
     height: 80vh;
     overflow: hidden;
     display: flex;
@@ -221,20 +225,20 @@ html,body{
     background: url("me.png");
     background-size: cover;
     float: right;
-    /* transform: translateX(100%); */
     overflow: hidden;
-    animation: slideme 1s ease-in 0s   forwards;
+    animation: slideme .7s ease-in 0s   forwards;
 
 }
 
 @keyframes slideme {
     0%{
-        transform: translateX(100%);
+        transform: translate(100%,50%) scale(3);
         opacity: 0;
        }        
     100%{
-        transform: translateX(0%);
+        transform: translate(-10%,5%) scale(1.3);
         opacity: 1;
+        
         }
 }
 @keyframes slideabout {
@@ -250,28 +254,30 @@ html,body{
 
 @keyframes slideabt {
     0%{letter-spacing: 20px;}
-    25%{letter-spacing: 10px;}
     50%{letter-spacing: 5px;}
     75%{letter-spacing: 10px;}
     100%{letter-spacing: 0px;}
 }
 
 .ham-page{
-    height: 80vh;
+    height: 70%;
     width: 24%;
-    background-color: blue;
+    background-color: rgb(32, 32, 94);
     position: absolute;
-    top: 10vh;
-    right: 3.4vw;
+    top: 8%;
+    right: 3%;
     display: none;
-    opacity: .7;
+    /* opacity: .7; */
     padding:0;
+    cursor: none;
 }
 .change-ham{
     display:flex;
+    animation: dispham .2s ease-in  forwards;
+    transition: all;
 }
 .ham-page-left{
-    width: 50%;
+    width: 25%;
     border-right: 2px solid black;
     display: flex;
     flex-direction: column;
@@ -290,9 +296,24 @@ html,body{
 }
 
 .hamicon{
-    transform: scale(3);
+    transform: scale(2);
+}
+.hamicon:hover{
+    box-shadow: 1px 1px 10px var(--pitchwhite);
+    transform: scale(2.3);
+    border-radius: 50%;
 }
 
-
-
-
+.ham-page-left a{cursor: none;}
+@keyframes dispham {
+    0%{
+        opacity: 0;
+        /* transform: scale(0); */
+        max-height: 0;
+       }        
+    100%{
+        opacity: 1;
+        /* transform: scale(1); */
+        max-height: 80%;
+        }
+}
